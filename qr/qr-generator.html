@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Generator — Soma Cosmetic</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #FAF6EF;
+      color: #2E2418;
+      max-width: 460px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem;
+      text-align: center;
+    }
+    h1 { font-size: 1.3rem; }
+    p.hint { color: #8B7B66; font-size: 0.9rem; }
+    input {
+      width: 100%;
+      font-size: 1rem;
+      padding: 0.7rem 0.9rem;
+      border: 1px solid #E6DCC9;
+      border-radius: 10px;
+      box-sizing: border-box;
+      margin-bottom: 0.8rem;
+    }
+    button, a.dl {
+      display: inline-block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.65rem 1.3rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      background: #A5763F;
+      color: #fff;
+      text-decoration: none;
+      margin: 0.25rem;
+    }
+    a.dl { background: #2E2418; }
+    #qr { margin: 1.2rem auto; }
+    #qr canvas { border: 12px solid #fff; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
+    #error { color: #b03030; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <h1>QR Code for your catalog</h1>
+  <p class="hint">Paste your live Netlify URL below (e.g. https://soma-cosmetic.netlify.app), then download the QR as PNG or SVG for your business card. Works offline — keep qrcode.min.js next to this file.</p>
+
+  <input id="url" type="url" value="https://soma-cosmetic.netlify.app" placeholder="https://your-site.netlify.app">
+  <button id="generate" type="button">Generate QR</button>
+
+  <div id="qr"></div>
+  <p id="error"></p>
+  <div id="downloads" hidden>
+    <a class="dl" id="dlPng" download="soma-cosmetic-qr.png">Download PNG</a>
+    <a class="dl" id="dlSvg" download="soma-cosmetic-qr.svg">Download SVG</a>
+  </div>
+
+  <script src="qrcode.min.js"></script>
+  <script>
+    var qrBox = document.getElementById("qr");
+    var errEl = document.getElementById("error");
+
+    function generate() {
+      var url = document.getElementById("url").value.trim();
+      errEl.textContent = "";
+      qrBox.textContent = "";
+      document.getElementById("downloads").hidden = true;
+      if (!url) { errEl.textContent = "Please enter a URL."; return; }
+      if (typeof QRCode === "undefined") {
+        errEl.textContent = "QR library not found — make sure qrcode.min.js is in the same folder as this file.";
+        return;
+      }
+
+      var canvas = document.createElement("canvas");
+      // High resolution + error correction level H = safe for print
+      QRCode.toCanvas(canvas, url, { width: 1024, errorCorrectionLevel: "H", margin: 2 }, function (err) {
+        if (err) { errEl.textContent = "Could not generate: " + err; return; }
+        canvas.style.width = "260px";
+        canvas.style.height = "260px";
+        qrBox.appendChild(canvas);
+        document.getElementById("dlPng").href = canvas.toDataURL("image/png");
+        QRCode.toString(url, { type: "svg", errorCorrectionLevel: "H", margin: 2 }, function (err2, svg) {
+          if (!err2) {
+            document.getElementById("dlSvg").href =
+              "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+          }
+          document.getElementById("downloads").hidden = false;
+        });
+      });
+    }
+
+    document.getElementById("generate").addEventListener("click", generate);
+    document.getElementById("url").addEventListener("keydown", function (e) {
+      if (e.key === "Enter") generate();
+    });
+    window.addEventListener("load", generate);
+  </script>
+</body>
+</html>

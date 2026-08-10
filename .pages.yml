@@ -1,0 +1,119 @@
+# Pages CMS configuration — this file defines the admin panel at app.pagescms.org
+# Docs: https://pagescms.org/docs/configuration/
+
+media:
+  input: site/assets/uploads
+  output: assets/uploads
+
+content:
+  - name: settings
+    label: Shop Settings
+    type: file
+    path: site/data/settings.json
+    format: json
+    fields:
+      - name: shopName
+        label: Shop name
+        type: string
+        required: true
+      - name: tagline
+        label: Tagline
+        type: string
+      - name: logo
+        label: Logo image
+        type: image
+        description: Optional. If empty, the site shows a simple monogram logo.
+      - name: phone
+        label: Phone number
+        type: string
+        description: Shown on the site, e.g. +964 750 123 4567
+      - name: whatsapp
+        label: WhatsApp number
+        type: string
+        description: Digits only, international format, e.g. 9647501234567
+      - name: whatsappMessage
+        label: Pre-filled WhatsApp message
+        type: string
+      - name: address
+        label: Address
+        type: string
+      - name: instagram
+        label: Instagram link
+        type: string
+      - name: facebook
+        label: Facebook link
+        type: string
+      - name: currency
+        label: Currency label
+        type: string
+        description: Shown after prices, e.g. IQD
+
+  - name: products
+    label: Products
+    type: file
+    path: site/data/products.json
+    format: json
+    fields:
+      - name: products
+        label: Product list
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name} — {brand}"
+        fields:
+          - name: name
+            label: Product name
+            type: string
+            required: true
+          - name: brand
+            label: Brand
+            type: reference
+            options:
+              collection: brands
+              value: "{fields.name}"
+              label: "{fields.name}"
+              search: "name"
+          - name: category
+            label: Category
+            type: reference
+            options:
+              collection: categories
+              value: "{fields.name}"
+              label: "{fields.name}"
+              search: "name"
+          - name: price
+            label: Price
+            type: number
+            description: Price in IQD, numbers only (e.g. 8500). Leave empty to show "Ask for price".
+          - name: image
+            label: Photo
+            type: image
+
+  - name: categories
+    label: Categories
+    type: collection
+    path: site/data/categories
+    format: json
+    filename: "{primary}.json"
+    view:
+      primary: name
+    fields:
+      - name: name
+        label: Category name
+        type: string
+        required: true
+
+  - name: brands
+    label: Brands
+    type: collection
+    path: site/data/brands
+    format: json
+    filename: "{primary}.json"
+    view:
+      primary: name
+    fields:
+      - name: name
+        label: Brand name
+        type: string
+        required: true

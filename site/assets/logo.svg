@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88">
+  <!-- Placeholder logo — replace this file with your real logo (keep the name logo.svg,
+       or use logo.png and update the <img> in index.html) -->
+  <circle cx="44" cy="44" r="42" fill="#A5763F"/>
+  <circle cx="44" cy="44" r="36" fill="none" stroke="#FAF6EF" stroke-width="1.5" opacity="0.5"/>
+  <text x="44" y="58" text-anchor="middle" font-family="Georgia, serif" font-size="40" fill="#FAF6EF">S</text>
+</svg>

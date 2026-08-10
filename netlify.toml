@@ -1,0 +1,17 @@
+# Netlify configuration — used when deploying via a Git repository.
+
+[build]
+  publish = "site"
+
+# Uploaded photos and data change through the admin panel, so cache briefly
+# and let Netlify's etag revalidation keep things fresh after each deploy.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

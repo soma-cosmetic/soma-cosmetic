@@ -1,0 +1,433 @@
+/* Soma Cosmetic — warm cream + bronze */
+
+:root {
+  --cream: #FAF6EF;
+  --cream-deep: #F1E9DB;
+  --card: #FFFDF8;
+  --bronze: #A5763F;
+  --bronze-dark: #7E5A2E;
+  --bronze-soft: #C9A876;
+  --ink: #2E2418;
+  --muted: #8B7B66;
+  --line: #E6DCC9;
+  --wa: #25D366;
+  --radius: 16px;
+  --shadow: 0 2px 12px rgba(46, 36, 24, 0.07);
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: min(1080px, 100% - 2.5rem);
+  margin-inline: auto;
+}
+
+h1, h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  background: var(--cream);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 0.8rem;
+}
+
+.brand-mark {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand-text { display: flex; flex-direction: column; }
+
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.brand-tagline {
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.header-call {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: var(--bronze);
+  border: 1px solid var(--line);
+  background: var(--card);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  text-align: center;
+  padding: 3.2rem 0 3.6rem;
+  background:
+    radial-gradient(600px 280px at 50% -80px, rgba(201, 168, 118, 0.28), transparent 70%),
+    var(--cream);
+}
+
+.hero-kicker {
+  margin: 0;
+  color: var(--bronze);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+}
+
+.hero h1 {
+  margin: 0.4rem 0 0.5rem;
+  font-size: clamp(2.1rem, 8vw, 3.2rem);
+}
+
+.hero-sub {
+  margin: 0 auto 1.6rem;
+  max-width: 34ch;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--bronze);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.75rem 1.7rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: var(--shadow);
+  transition: background 0.2s;
+}
+
+.btn-primary:hover { background: var(--bronze-dark); }
+
+/* ---------- Filter bar ---------- */
+.filter-bar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(250, 246, 239, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-block: 1px solid var(--line);
+}
+
+.filter-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-block: 0.65rem;
+}
+
+.chip-row {
+  display: flex;
+  gap: 0.45rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  flex: 1;
+}
+
+.chip-row::-webkit-scrollbar { display: none; }
+
+.chip {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+  font-size: 0.85rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.chip .icon { width: 16px; height: 16px; }
+
+.chip[aria-selected="true"] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--cream);
+}
+
+.brand-select-wrap select {
+  appearance: none;
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: var(--ink);
+  background: var(--card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23A5763F' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 0.8rem center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.45rem 2.1rem 0.45rem 0.95rem;
+  max-width: 138px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* ---------- Products ---------- */
+.products { padding: 1.8rem 0 2.6rem; }
+
+.products-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.products-head h2 { margin: 0; font-size: 1.45rem; }
+
+.results-count {
+  color: var(--muted);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(158px, 1fr));
+  gap: 0.9rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow);
+}
+
+.card-media {
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(160deg, var(--cream) 0%, var(--cream-deep) 100%);
+  color: var(--bronze-soft);
+  position: relative;
+}
+
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-media .icon {
+  width: 42px;
+  height: 42px;
+  stroke-width: 1.3;
+}
+
+.card-body {
+  padding: 0.7rem 0.85rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  flex: 1;
+}
+
+.card-brand {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--bronze);
+  font-weight: 600;
+}
+
+.card-name {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.35;
+  flex: 1;
+}
+
+.card-price {
+  margin-top: 0.35rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.card-price.ask { color: var(--muted); font-weight: 500; font-size: 0.85rem; }
+
+.empty-state {
+  text-align: center;
+  padding: 2.5rem 0;
+  color: var(--muted);
+}
+
+.btn-ghost {
+  font-family: inherit;
+  font-size: 0.9rem;
+  background: none;
+  border: 1px solid var(--bronze);
+  color: var(--bronze);
+  border-radius: 999px;
+  padding: 0.55rem 1.4rem;
+  cursor: pointer;
+}
+
+/* ---------- Brands ---------- */
+.brands-section {
+  background: var(--cream-deep);
+  padding: 2.2rem 0 2.6rem;
+}
+
+.brands-section h2 { margin: 0 0 1rem; font-size: 1.45rem; }
+
+.brand-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.brand-pill {
+  font-family: inherit;
+  font-size: 0.88rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.brand-pill:hover { border-color: var(--bronze); color: var(--bronze); }
+
+/* ---------- Contact ---------- */
+.contact { padding: 2.4rem 0 2.8rem; }
+
+.contact h2 { margin: 0 0 1rem; font-size: 1.45rem; }
+
+.contact-list {
+  list-style: none;
+  margin: 0 0 1.2rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.contact-list .icon { color: var(--bronze); }
+
+.contact-list a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.socials { display: flex; gap: 0.6rem; }
+
+.socials a {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--bronze);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 1.1rem 0 5.5rem; /* bottom space so the floating button never covers text */
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.site-footer p { margin: 0; }
+
+/* ---------- Floating WhatsApp ---------- */
+.wa-float {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 40;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--wa);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 0.7rem 1.15rem;
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+}
+
+.wa-float .icon { stroke-width: 1.9; }
+
+@media (min-width: 700px) {
+  .grid { gap: 1.1rem; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+  .hero { padding: 4.5rem 0 5rem; }
+  .brand-select-wrap select { max-width: 200px; }
+}

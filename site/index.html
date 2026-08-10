@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soma Cosmetic — Grooming &amp; Beauty Catalog</title>
+  <meta name="description" content="Soma Cosmetic — premium shampoos, shavers, perfumes and personal care products. Browse our catalog and contact us on WhatsApp.">
+  <meta name="theme-color" content="#FAF6EF">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Icon sprite (decorative icons used across the page) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-shampoo" viewBox="0 0 24 24">
+        <path d="M9 8h6a1 1 0 0 1 1 1v11a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V9a1 1 0 0 1 1-1Z"/>
+        <path d="M10 8V6h4v2M12 6V4h3"/>
+        <path d="M8.5 13h7"/>
+      </symbol>
+      <symbol id="i-shaver" viewBox="0 0 24 24">
+        <rect x="7" y="3" width="10" height="5" rx="1.2"/>
+        <path d="M10 8v2.5a2 2 0 0 0 2 2 2 2 0 0 1 2 2V21M9 5.5h.01M12 5.5h.01M15 5.5h.01"/>
+      </symbol>
+      <symbol id="i-perfume" viewBox="0 0 24 24">
+        <path d="M9.5 10h5a3.5 3.5 0 0 1 3.5 3.5v5a3.5 3.5 0 0 1-3.5 3.5h-5A3.5 3.5 0 0 1 6 18.5v-5A3.5 3.5 0 0 1 9.5 10Z"/>
+        <path d="M10.5 10V7.5h3V10M10.5 5.5h3M17 4h3M18.5 2.5v3"/>
+      </symbol>
+      <symbol id="i-skincare" viewBox="0 0 24 24">
+        <path d="M6 11h12v7a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3v-7Z"/>
+        <path d="M5.5 11h13M8 7.5c2.5-1.5 5.5-1.5 8 0"/>
+      </symbol>
+      <symbol id="i-deo" viewBox="0 0 24 24">
+        <rect x="8" y="8" width="8" height="14" rx="2"/>
+        <path d="M10 8V6.5h4V8M16.5 4.5h3M17.5 2.5l1.5 1.5-1.5 1.5"/>
+      </symbol>
+      <symbol id="i-sparkle" viewBox="0 0 24 24">
+        <path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z"/>
+        <path d="M18 16.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2Z"/>
+      </symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24">
+        <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/>
+      </symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24">
+        <path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/>
+        <circle cx="12" cy="10" r="2.5"/>
+      </symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24">
+        <rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M17.2 6.8h.01"/>
+      </symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24">
+        <path d="M14.5 8.5V7a1.5 1.5 0 0 1 1.5-1.5h1.5v-3H15a4 4 0 0 0-4 4v2H8.5v3H11v9h3.5v-9h2.5l.5-3h-3Z"/>
+      </symbol>
+      <symbol id="i-whatsapp" viewBox="0 0 24 24">
+        <path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z"/>
+        <path d="M9 8.5c-.3 0-.8.3-.8 1.2 0 2.4 3.7 5.6 6.1 5.6.9 0 1.2-.5 1.2-.8l-.3-1.2-1.5-.5-.8.8c-1-.4-2.2-1.5-2.6-2.5l.8-.8-.5-1.5L9 8.5Z"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-mark" href="#top">
+        <img src="assets/logo.svg" alt="" width="44" height="44" id="shopLogo" style="border-radius:50%;object-fit:cover;">
+        <span class="brand-text">
+          <span class="brand-name" id="shopName">Soma Cosmetic</span>
+          <span class="brand-tagline" id="shopTagline"></span>
+        </span>
+      </a>
+      <a class="header-call" id="headerPhone" href="#contact" aria-label="Call us">
+        <svg class="icon"><use href="#i-phone"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <p class="hero-kicker">Welcome to</p>
+        <h1 id="heroName">Soma Cosmetic</h1>
+        <p class="hero-sub" id="heroTagline"></p>
+        <a class="btn-primary" href="#products">Browse products</a>
+      </div>
+    </section>
+
+    <nav class="filter-bar" aria-label="Product filters">
+      <div class="container filter-inner">
+        <div class="chip-row" id="categoryChips" role="tablist" aria-label="Categories"></div>
+        <label class="brand-select-wrap">
+          <span class="visually-hidden">Filter by brand</span>
+          <select id="brandSelect">
+            <option value="all">All brands</option>
+          </select>
+        </label>
+      </div>
+    </nav>
+
+    <section class="products" id="products">
+      <div class="container">
+        <div class="products-head">
+          <h2 id="resultsTitle">All products</h2>
+          <span class="results-count" id="resultsCount"></span>
+        </div>
+        <div class="grid" id="productGrid"></div>
+        <div class="empty-state" id="emptyState" hidden>
+          <p>No products match this filter.</p>
+          <button class="btn-ghost" id="clearFilters" type="button">Show everything</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="brands-section" id="brands">
+      <div class="container">
+        <h2>Shop by brand</h2>
+        <div class="brand-pills" id="brandPills"></div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2>Visit us</h2>
+        <ul class="contact-list">
+          <li>
+            <svg class="icon"><use href="#i-phone"/></svg>
+            <a id="contactPhone" href="#">+964 ...</a>
+          </li>
+          <li>
+            <svg class="icon"><use href="#i-pin"/></svg>
+            <span id="contactAddress"></span>
+          </li>
+        </ul>
+        <div class="socials">
+          <a id="linkInstagram" href="#" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg class="icon"><use href="#i-instagram"/></svg>
+          </a>
+          <a id="linkFacebook" href="#" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg class="icon"><use href="#i-facebook"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><span id="footerName">Soma Cosmetic</span> · <span id="footerYear"></span></p>
+    </div>
+  </footer>
+
+  <a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+    <svg class="icon"><use href="#i-whatsapp"/></svg>
+    <span>WhatsApp</span>
+  </a>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

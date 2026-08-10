@@ -1,0 +1,31 @@
+{
+  "products": [
+    { "name": "Classic Clean Shampoo 400ml", "brand": "Head & Shoulders", "category": "Shampoos", "price": 8500, "image": "" },
+    { "name": "Elvive Total Repair 5 Shampoo", "brand": "L'Oréal", "category": "Shampoos", "price": 9750, "image": "" },
+    { "name": "Nutritive Daily Moisture Shampoo", "brand": "Dove", "category": "Shampoos", "price": 7500, "image": "" },
+    { "name": "Men Strong Power Shampoo", "brand": "Nivea", "category": "Shampoos", "price": 6500, "image": "" },
+    { "name": "Pro-V Smooth & Silky Shampoo", "brand": "Pantene", "category": "Shampoos", "price": 8000, "image": "" },
+    { "name": "Men Deep Cleanse Shampoo", "brand": "Clear", "category": "Shampoos", "price": 7250, "image": "" },
+    { "name": "Fusion5 Razor + 2 Blades", "brand": "Gillette", "category": "Shavers", "price": 12000, "image": "" },
+    { "name": "Mach3 Blades — 4 Pack", "brand": "Gillette", "category": "Shavers", "price": 15000, "image": "" },
+    { "name": "Series 3 Electric Shaver", "brand": "Braun", "category": "Shavers", "price": 85000, "image": "" },
+    { "name": "OneBlade Face + Body", "brand": "Philips", "category": "Shavers", "price": 65000, "image": "" },
+    { "name": "MGK3 All-in-One Grooming Kit", "brand": "Braun", "category": "Shavers", "price": 70000, "image": "" },
+    { "name": "Series 1000 Beard Trimmer", "brand": "Philips", "category": "Shavers", "price": 40000, "image": "" },
+    { "name": "Club de Nuit Intense Man 105ml", "brand": "Armaf", "category": "Perfumes", "price": 45000, "image": "" },
+    { "name": "Asad Eau de Parfum 100ml", "brand": "Lattafa", "category": "Perfumes", "price": 32000, "image": "" },
+    { "name": "Khamrah Eau de Parfum 100ml", "brand": "Lattafa", "category": "Perfumes", "price": 38000, "image": "" },
+    { "name": "Hawas for Him 100ml", "brand": "Rasasi", "category": "Perfumes", "price": 55000, "image": "" },
+    { "name": "Odyssey Mandarin Sky 100ml", "brand": "Armaf", "category": "Perfumes", "price": 30000, "image": "" },
+    { "name": "Yara Eau de Parfum 100ml", "brand": "Lattafa", "category": "Perfumes", "price": 35000, "image": "" },
+    { "name": "Fattan Pour Homme 50ml", "brand": "Rasasi", "category": "Perfumes", "price": null, "image": "" },
+    { "name": "Soft Moisturising Cream 200ml", "brand": "Nivea", "category": "Skincare", "price": 6000, "image": "" },
+    { "name": "Men Deep Cleaning Face Wash", "brand": "Nivea", "category": "Skincare", "price": 7000, "image": "" },
+    { "name": "Men Expert Hydra Energetic Cream", "brand": "L'Oréal", "category": "Skincare", "price": 11000, "image": "" },
+    { "name": "Beauty Cream Bar — 4 Pack", "brand": "Dove", "category": "Skincare", "price": 5500, "image": "" },
+    { "name": "Dark Temptation Body Spray", "brand": "Axe", "category": "Deodorants", "price": 5500, "image": "" },
+    { "name": "Whitewater Deodorant Stick", "brand": "Old Spice", "category": "Deodorants", "price": 8000, "image": "" },
+    { "name": "Men Fresh Active Roll-on", "brand": "Nivea", "category": "Deodorants", "price": 4750, "image": "" },
+    { "name": "Men+Care Clean Comfort Spray", "brand": "Dove", "category": "Deodorants", "price": 6500, "image": "" }
+  ]
+}
