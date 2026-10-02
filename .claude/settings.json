@@ -5,9 +5,16 @@
         "source": "github",
         "repo": "anthropics/knowledge-work-plugins"
       }
+    },
+    "design-superpowers": {
+      "source": {
+        "source": "github",
+        "repo": "LSDimi/design-superpowers"
+      }
     }
   },
   "enabledPlugins": {
-    "engineering@knowledge-work-plugins": true
+    "engineering@knowledge-work-plugins": true,
+    "design-superpowers@design-superpowers": true
   }
 }
